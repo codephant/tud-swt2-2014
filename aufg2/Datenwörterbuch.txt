@@ -1,0 +1,51 @@
+Datenwörterbuch
+
+
+Bestand :: {Medium}^n. // Datenstruktur mit alle Medien
+
+Medium ::= Mediumdaten 
+		+ Statusdaten
+		+ Medienrechte.
+
+Mediumdaten ::= Medientyp
+		+ Titel
+		+ Author 
+		+ (Verlag) 
+		+ (Auflage) 
+		+ Erscheinungsdatum 
+		+ Id.
+
+Statusdaten ::= verfügbar
+		| ausgeliehene
+		| vorbestellt.
+
+Suchdaten ::= 1 { [ Inhaltausschnitt
+		| Medientyp 
+		| Titel
+		| Author 
+		| Verlag 
+		| Auflage 
+		| Erscheinungsdatum
+		| Id ] } n.
+
+Id ::= ISBN
+		| ISSN
+		| ISMN.
+
+Warnung ::= Id 
+		+ Nutzer 
+		+ Medium 
+		+ Warnunginhalt.
+
+Nutzer ::= Nutzerdaten 
+		+ Gruppe.
+
+Nutzerdaten ::= Vorname 
+		+ Nachname 
+		+ Geburtsdatum 
+		+ Adresse
+		+ Nutzername 
+		+ Kennwort. 
+
+Gruppe ::= Name 
+		+ Rechte. 
