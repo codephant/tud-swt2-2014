@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#"
+     xml:base="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_0901c2c4_7ff7_47b2_8477_2e834e0316ff -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_0901c2c4_7ff7_47b2_8477_2e834e0316ff">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_datum</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_16968062_46e1_49ee_a4c4_30a6dc394d95"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b1d78f82_a522_495f_961f_437d37dade6c"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_28822cf5_90b7_4273_822d_a74665884d93"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_28822cf5_90b7_4273_822d_a74665884d93 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_28822cf5_90b7_4273_822d_a74665884d93">
+        <rdfs:label xml:lang="de">Reservierungseigenschaften</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_5649b41f_4999_4946_895b_c20ab75dd25b -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_5649b41f_4999_4946_895b_c20ab75dd25b">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">darf_ausleihen</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4de4ce18_6ce9_4d35_9a86_124439e11670"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_7899680e_d325_4cd5_b3d2_b8ba9939053e"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_7899680e_d325_4cd5_b3d2_b8ba9939053e -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_7899680e_d325_4cd5_b3d2_b8ba9939053e">
+        <rdfs:label xml:lang="de">Gruppenrechte</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_8b39439a_0998_4593_86b9_9366de1ba941 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_8b39439a_0998_4593_86b9_9366de1ba941">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_gruppe</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_a4710795_755d_4eae_b029_a2112d6dbaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_8dea1c59_f930_4c9e_a9c6_02e45e2f4007 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_8dea1c59_f930_4c9e_a9c6_02e45e2f4007">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">darf_administrieren</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6ea0e64f_6faf_4804_8356_28b33878c214"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_7899680e_d325_4cd5_b3d2_b8ba9939053e"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_a4710795_755d_4eae_b029_a2112d6dbaff -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_a4710795_755d_4eae_b029_a2112d6dbaff">
+        <rdfs:label xml:lang="de">Nutzereigenschaften</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bd1e4e17_4841_495d_8b49_952bf4d401d2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bd1e4e17_4841_495d_8b49_952bf4d401d2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_nutzer</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_85a0b202_b126_4319_ad65_aad49dfce36d"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bdcc5829_39ce_4a87_8818_501d2ce5049d"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bdcc5829_39ce_4a87_8818_501d2ce5049d -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bdcc5829_39ce_4a87_8818_501d2ce5049d">
+        <rdfs:label xml:lang="de">Ausleiheigenschaften</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_c27456b0_1cdb_4463_bd61_dfe0a99f0584 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_c27456b0_1cdb_4463_bd61_dfe0a99f0584">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_ausleihdauer</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4de4ce18_6ce9_4d35_9a86_124439e11670"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_d045250c_8e32_4d79_aaff_17a1b8c781b2"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bdcc5829_39ce_4a87_8818_501d2ce5049d"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_d8d22137_9c98_498e_bd25_aa7f351dabb2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_d8d22137_9c98_498e_bd25_aa7f351dabb2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_nutzer</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b1d78f82_a522_495f_961f_437d37dade6c"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_28822cf5_90b7_4273_822d_a74665884d93"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_e9ba3b3c_e2b6_4076_8696_4bc0861976e6 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_e9ba3b3c_e2b6_4076_8696_4bc0861976e6">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">hat_medium</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4de4ce18_6ce9_4d35_9a86_124439e11670"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_85a0b202_b126_4319_ad65_aad49dfce36d"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_bdcc5829_39ce_4a87_8818_501d2ce5049d"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_fda138ef_359d_4ae1_a0c8_6b055da1c135 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_fda138ef_359d_4ae1_a0c8_6b055da1c135">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="de">darf_daten_pflegen</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6c8048a3_cb42_40d1_bab7_ab3c9091f4b2"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_7899680e_d325_4cd5_b3d2_b8ba9939053e"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_23802a08_b221_4eaf_b964_a78a07a812de -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_23802a08_b221_4eaf_b964_a78a07a812de">
+        <rdfs:label xml:lang="de">Datenpflege</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_a5dd5bfa_5016_4df4_ac9f_42da8ea80cf7"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_2e023399_11f8_4e90_b8fb_371730950f27 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_2e023399_11f8_4e90_b8fb_371730950f27">
+        <rdfs:label xml:lang="de">Ausleihe</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_a5dd5bfa_5016_4df4_ac9f_42da8ea80cf7"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655">
+        <rdfs:label xml:lang="de">Zeitspanne</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_4568c6b8_f2ea_4689_b827_13345fba11ad"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_4568c6b8_f2ea_4689_b827_13345fba11ad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_4568c6b8_f2ea_4689_b827_13345fba11ad">
+        <rdfs:label xml:lang="de">Zeiten</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f">
+        <rdfs:label xml:lang="de">Datum</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_4568c6b8_f2ea_4689_b827_13345fba11ad"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_a5dd5bfa_5016_4df4_ac9f_42da8ea80cf7 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_a5dd5bfa_5016_4df4_ac9f_42da8ea80cf7">
+        <rdfs:label xml:lang="de">Gruppenrechte</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_d667ff13_1177_415a_a0aa_b1a5ef193ed0 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_d667ff13_1177_415a_a0aa_b1a5ef193ed0">
+        <rdfs:label xml:lang="de">Administration</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_a5dd5bfa_5016_4df4_ac9f_42da8ea80cf7"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_04ca458d_09cb_41c2_a4c3_ee755987b346 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_04ca458d_09cb_41c2_a4c3_ee755987b346">
+        <rdfs:label xml:lang="de">Ausleihdauer_Default</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_f6d0739c_7b64_45eb_a06d_b46c6e03eefb"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_0a92dc4e_68cc_4803_bac4_6fcfec975d74 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_0a92dc4e_68cc_4803_bac4_6fcfec975d74">
+        <rdfs:label xml:lang="de">Ausleiheigenschaften</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_16968062_46e1_49ee_a4c4_30a6dc394d95 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_16968062_46e1_49ee_a4c4_30a6dc394d95">
+        <rdfs:label xml:lang="de">Datum</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b2d6e742_8d98_4641_a89f_4f71b96ad2c9"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_2a90cfa3_6fc9_485f_ac9a_10cdf9bb1f28 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_2a90cfa3_6fc9_485f_ac9a_10cdf9bb1f28">
+        <rdfs:label xml:lang="de">Bibliothek</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_34ec5230_ef8f_40a5_a3f5_a94380b2eb1b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_34ec5230_ef8f_40a5_a3f5_a94380b2eb1b">
+        <rdfs:label xml:lang="de">Datenträger</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_411646b5_74c3_481b_b32d_95ad44bface8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_411646b5_74c3_481b_b32d_95ad44bface8">
+        <rdfs:label xml:lang="de">DVD</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_34ec5230_ef8f_40a5_a3f5_a94380b2eb1b"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_ce6c5bac_a436_4df8_ae89_e76f7f481850"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_461c339d_aff6_498d_88d3_9b94b732ae6e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_461c339d_aff6_498d_88d3_9b94b732ae6e">
+        <rdfs:label xml:lang="de">Nutzer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_0a92dc4e_68cc_4803_bac4_6fcfec975d74"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f">
+        <rdfs:label xml:lang="de">Nutzergruppe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df">
+        <rdfs:label xml:lang="de">Nutzer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4de4ce18_6ce9_4d35_9a86_124439e11670 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4de4ce18_6ce9_4d35_9a86_124439e11670">
+        <rdfs:label xml:lang="de">Ausleihe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8508ae26_8f9c_4c82_88ba_860d6c1d0140"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_2e023399_11f8_4e90_b8fb_371730950f27"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_54665cec_71b6_4342_81c1_80289fa843b0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_54665cec_71b6_4342_81c1_80289fa843b0">
+        <rdfs:label xml:lang="de">Zeitschrift</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d">
+        <rdfs:label xml:lang="de">Unabhängige_Entitäten</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_2a90cfa3_6fc9_485f_ac9a_10cdf9bb1f28"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6c8048a3_cb42_40d1_bab7_ab3c9091f4b2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6c8048a3_cb42_40d1_bab7_ab3c9091f4b2">
+        <rdfs:label xml:lang="de">Datenpflege</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8508ae26_8f9c_4c82_88ba_860d6c1d0140"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_23802a08_b221_4eaf_b964_a78a07a812de"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6ea0e64f_6faf_4804_8356_28b33878c214 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_6ea0e64f_6faf_4804_8356_28b33878c214">
+        <rdfs:label xml:lang="de">Administration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8508ae26_8f9c_4c82_88ba_860d6c1d0140"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_d667ff13_1177_415a_a0aa_b1a5ef193ed0"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8508ae26_8f9c_4c82_88ba_860d6c1d0140 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8508ae26_8f9c_4c82_88ba_860d6c1d0140">
+        <rdfs:label xml:lang="de">Gruppenrechte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_85a0b202_b126_4319_ad65_aad49dfce36d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_85a0b202_b126_4319_ad65_aad49dfce36d">
+        <rdfs:label xml:lang="de">Medium</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_0a92dc4e_68cc_4803_bac4_6fcfec975d74"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b">
+        <rdfs:label xml:lang="de">Medium</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_958749e9_feea_400b_9199_4a74ec6d13b8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_958749e9_feea_400b_9199_4a74ec6d13b8">
+        <rdfs:label xml:lang="de">Broschüre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_990e559a_0946_49df_8388_10be84bb22fd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_990e559a_0946_49df_8388_10be84bb22fd">
+        <rdfs:label xml:lang="de">Buch</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_a20b2118_a7ca_4308_8b24_b2b5a8789d07 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_a20b2118_a7ca_4308_8b24_b2b5a8789d07">
+        <rdfs:label xml:lang="de">Ausleihe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b1d78f82_a522_495f_961f_437d37dade6c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b1d78f82_a522_495f_961f_437d37dade6c">
+        <rdfs:label xml:lang="de">Reservierung</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_651e7d10_ed48_4837_88f6_6f8bc939f41d"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b2d6e742_8d98_4641_a89f_4f71b96ad2c9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b2d6e742_8d98_4641_a89f_4f71b96ad2c9">
+        <rdfs:label xml:lang="de">Reservierungseigenschaften</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_ce6c5bac_a436_4df8_ae89_e76f7f481850 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_ce6c5bac_a436_4df8_ae89_e76f7f481850">
+        <rdfs:label xml:lang="de">CD</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_34ec5230_ef8f_40a5_a3f5_a94380b2eb1b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_d045250c_8e32_4d79_aaff_17a1b8c781b2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_d045250c_8e32_4d79_aaff_17a1b8c781b2">
+        <rdfs:label xml:lang="de">Ausleihdauer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_0a92dc4e_68cc_4803_bac4_6fcfec975d74"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e">
+        <rdfs:label xml:lang="de">Werte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_2a90cfa3_6fc9_485f_ac9a_10cdf9bb1f28"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_f6d0739c_7b64_45eb_a06d_b46c6e03eefb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_f6d0739c_7b64_45eb_a06d_b46c6e03eefb">
+        <rdfs:label xml:lang="de">Gruppen-Medientyp-Rechte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_eb2fb8f0_c462_49d1_ba77_8544c970096e"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_1c4b45ca_132d_4d48_a12c_064c282edbbc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_1c4b45ca_132d_4d48_a12c_064c282edbbc">
+        <rdfs:label xml:lang="de">Die Bibel</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_990e559a_0946_49df_8388_10be84bb22fd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_72753b38_b906_4793_b262_1f5a28d409b5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_72753b38_b906_4793_b262_1f5a28d409b5">
+        <rdfs:label xml:lang="de">Matrix</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_411646b5_74c3_481b_b32d_95ad44bface8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_81727359_0e1b_4a11_931a_d47bfff252e6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_81727359_0e1b_4a11_931a_d47bfff252e6">
+        <rdfs:label xml:lang="de">Peter</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4ac54c53_30f3_4904_aef8_d383d31452df"/>
+        <rdfs:isDefinedBy>
+            <rdf:Description/>
+        </rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_a86605fe_61ff_40f6_b805_e7b816f3cb42 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_a86605fe_61ff_40f6_b805_e7b816f3cb42">
+        <rdfs:label xml:lang="de">PeterBibelLeihe</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_1c4b45ca_132d_4d48_a12c_064c282edbbc"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_81727359_0e1b_4a11_931a_d47bfff252e6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_d306664e_3612_4535_aae9_c2b4acc022a0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLNamedIndividual_d306664e_3612_4535_aae9_c2b4acc022a0">
+        <rdfs:label xml:lang="de">Studenten</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLObjectProperty_5649b41f_4999_4946_895b_c20ab75dd25b"/>
+        <rdfs:isDefinedBy>
+            <rdf:Description/>
+        </rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f></OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f>
+    </rdf:Description>
+    <rdf:Description>
+        <OWLDataProperty_2e023399_11f8_4e90_b8fb_371730950f27></OWLDataProperty_2e023399_11f8_4e90_b8fb_371730950f27>
+    </rdf:Description>
+    <rdf:Description>
+        <OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f></OWLDataProperty_88904208_8f74_4b2f_8f10_deb4a629097f>
+    </rdf:Description>
+    <rdf:Description>
+        <OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655></OWLDataProperty_398b2009_aaec_48a1_80c9_48f334bde655>
+    </rdf:Description>
+    <rdf:Description>
+        <OWLDataProperty_d667ff13_1177_415a_a0aa_b1a5ef193ed0></OWLDataProperty_d667ff13_1177_415a_a0aa_b1a5ef193ed0>
+    </rdf:Description>
+    <rdf:Description>
+        <OWLDataProperty_23802a08_b221_4eaf_b964_a78a07a812de></OWLDataProperty_23802a08_b221_4eaf_b964_a78a07a812de>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_34ec5230_ef8f_40a5_a3f5_a94380b2eb1b"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_54665cec_71b6_4342_81c1_80289fa843b0"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_958749e9_feea_400b_9199_4a74ec6d13b8"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_990e559a_0946_49df_8388_10be84bb22fd"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_4858f4f5_a68b_4a36_999a_0245302a4d6f"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_8e48784a_16d7_4783_898a_bed3911bdc6b"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/felix/ontologies/2014/10/Bibliothek#OWLClass_b2d6e742_8d98_4641_a89f_4f71b96ad2c9"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
