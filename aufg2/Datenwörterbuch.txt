@@ -15,6 +15,14 @@ Mediumdaten ::= Medientyp
 		+ Erscheinungsdatum 
 		+ Id.
 
+Medientyp ::= Datenträger
+		| Zeitschrift
+		| Broschüre
+		| Buch.
+
+Datenträger ::= CD
+		| DVD.
+
 Statusdaten ::= verfügbar
 		| ausgeliehene
 		| vorbestellt.
@@ -49,3 +57,18 @@ Nutzerdaten ::= Vorname
 
 Gruppe ::= Name 
 		+ Rechte. 
+
+Rechte ::= Ausleihe
+		+ Datenpflege
+		+ Administration. 
+
+Medienrechte ::= Ausliehbar
+		+ (MaxAusleihdauer).
+
+Ausleihe ::= Nutzer
+		+ Medium
+		+ Ausleihedauer.
+
+Vorbestellung ::= Nutzer
+		+ Medium
+		+ Datum. 
