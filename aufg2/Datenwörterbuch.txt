@@ -1,15 +1,16 @@
 Datenwörterbuch
 
 
-Bestand :: {Medium}^n. // Datenstruktur mit alle Medien
+Bestand :: {Medium}^n. // Datenstruktur aller Medien
 
 Medium ::= Mediumdaten 
-		+ Statusdaten
-		+ Medienrechte.
+		+ Status
+		+ Medienrechte
+		+ Stückzahl.
 
 Mediumdaten ::= Medientyp
 		+ Titel
-		+ Author 
+		+ Autor 
 		+ (Verlag) 
 		+ (Auflage) 
 		+ Erscheinungsdatum 
@@ -23,9 +24,9 @@ Medientyp ::= Datenträger
 Datenträger ::= CD
 		| DVD.
 
-Statusdaten ::= verfügbar
-		| ausgeliehene
-		| vorbestellt.
+Status ::= [verfügbar
+		| ausgeliehen]
+		+ vorbestellt.
 
 Suchdaten ::= 1 { [ Inhaltausschnitt
 		| Medientyp 
@@ -43,7 +44,7 @@ Id ::= ISBN
 Warnung ::= Id 
 		+ Nutzer 
 		+ Medium 
-		+ Warnunginhalt.
+		+ Inhalt.
 
 Nutzer ::= Nutzerdaten 
 		+ Gruppe.
@@ -67,8 +68,9 @@ Medienrechte ::= Ausliehbar
 
 Ausleihe ::= Nutzer
 		+ Medium
-		+ Ausleihedauer.
+		+ Ausleihbeginn
+		+ Ausleihende.
 
 Vorbestellung ::= Nutzer
 		+ Medium
-		+ Datum. 
+		+ Zeitstempel. 
