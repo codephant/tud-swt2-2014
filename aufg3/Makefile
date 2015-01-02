@@ -1,19 +1,16 @@
+CLEANFILES=*.out *.aux *.log lastenheft-inhalt.tex
+PURGEFILES=Lastenheft.pdf
 
-CLEANFILES=aux/*
-PURGEFILES=$(CLEANFILES) Lastenheft.pdf
+lastenheft.tex: lastenheft-inhalt.tex
 
-%.tex : %.html
-	xsltproc -v -o $@ scripts/xhtml2tex.xslt $<
+%.tex: %.md
+	pandoc -f markdown -t latex -o $@ $<
 
-aux/lh-inhalt.html : Lastenheft.txt
-	theme -t lh/lh-inhalt.theme -o aux/lh-inhalt.html Lastenheft.txt
-
-Lastenheft.pdf : aux/lh-inhalt.tex lh/Lastenheft.tex
-	xelatex lh/Lastenheft.tex
-	mv *.aux *.log *.out aux/ # cleaning up the latex mess
+%.pdf: %.tex
+	xelatex $^
 
 clean :
 	rm -f $(CLEANFILES)
 
-purge :
+purge : clean
 	rm -f $(PURGEFILES)
