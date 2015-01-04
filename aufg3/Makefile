@@ -1,7 +1,11 @@
-CLEANFILES=*.out *.aux *.log lastenheft-inhalt.tex
-PURGEFILES=Lastenheft.pdf
+CLEANFILES=*.out *.aux *.log *heft-inhalt.tex
 
 lastenheft.tex: lastenheft-inhalt.tex
+
+pflichtenheft.tex: pflichtenheft-inhalt.tex
+
+%heft.purge : clean
+	rm -f $*heft.pdf
 
 %.tex: %.md
 	pandoc -f markdown -t latex -o $@ $<
@@ -11,6 +15,3 @@ lastenheft.tex: lastenheft-inhalt.tex
 
 clean :
 	rm -f $(CLEANFILES)
-
-purge : clean
-	rm -f $(PURGEFILES)

@@ -1,0 +1,36 @@
+\documentclass[a4paper]{article}
+%%%%%%% packages %%%%%%%%
+\usepackage{xltxtra}
+\usepackage{lmodern,hyperref}
+\usepackage[ngerman]{babel}
+%\usepackage[iso,german]{isodate}
+
+%%%%%%% new commands %%%%%%%%
+\newcommand\sref[1]{\hyperref[#1]{[\ref{#1}]}}
+\newcommand\theauthor{Felix Kluge, Alejandro, Marcel, Javier, Andr\'e Arnold}
+\newcommand\thetitle{Buchbestandsverwaltung -- Pflichtenheft}
+
+%%%%%%% renewed commands %%%%%%%
+
+%%%%%%% config %%%%%%%
+\hypersetup{%
+	pdfborder={0 0 0},
+	colorlinks=true,
+	linkcolor=lightblue,
+	pdftitle={\thetitle -- \theauthor}
+}
+
+%%%%%%% doc data %%%%%%%%
+\author{\theauthor}
+\title{\thetitle}
+\date{\today}
+
+\begin{document}
+%%%%%%% document %%%%%%%%
+
+\maketitle
+
+\input{pflichtenheft-inhalt}
+
+%%%%%%% document end %%%%%%%%
+\end{document}

@@ -1,24 +1,27 @@
 
 # Zielbestimmung
-Durch den Umzug der Fakultät und aller ihrer Lehrstühle ist das Problem der Verwaltung der Lehrstuhleigenen
-Bibliothek aufgekommen. Diese werden derzeit zumeist durch die Sekretärinnen, aber auch
-durch Mitarbeiter verwaltet, wobei mit den Jahren der Überblick verloren geht. Deshalb soll ein neues
-rechnergestütztes System entworfen werden, dass bei der Verwaltung der Bibliotheksmedien helfen kann.
+
+Durch den Umzug der Fakultät und aller ihrer Lehrstühle ist das Problem der Verwaltung der Lehrstuhleigenen Bibliothek aufgekommen. Diese werden derzeit zumeist durch die Sekretärinnen, aber auch durch Mitarbeiter verwaltet, wobei mit den Jahren der Überblick verloren geht. Deshalb soll ein neues rechnergestütztes System entworfen werden, dass bei der Verwaltung der Bibliotheksmedien helfen kann.
 
 # Produkteinsatz
-  * Rechner der Bibliotheksangestellten
-  * Von jedem Rechner am Lehrstuhl aus erreichbar
+
+Das System wird auf allen Rechnern am Lehrstuhl zur Vefügung stehen und somit den Zugriff auf den Bibliotheksbestand vielen zugänglich machen. Das System wird durch entsprechende Administratoren verwaltet werden.
 
 # Produktübersicht
 
+Durch das System können eine Vielzahl von Nutzern Informationen zu verschiedenartigen Medien abrufen. Diese Medieninformationen werden durch entsprechende Speicher gehalten und können verändert werden.
+
+Das System besitzt eine Nutzerverwaltung. Neben den Nutzerdaten werden auch die dazugehörigen Nutzerrechte in Form von Rechtegruppen verwaltet.
 
 # Produktfunktionen
 
 ## /LF10/
-Anlegen, löschen und ändern von Medien aller Art
+
+Die Informationen zu Medien wie Büchern, DVDs, CDs, Zeitschriften und mehr müssen durch die Administratoren angelegt, gelöscht und verändert werden können.
 
 ## /LF20/
-Nutzer anlegen, löschen und ändern
+
+Das System muss Nutzer verwalten können. Die entsprechenden Nutzerdaten müssen angelegt, verändert und gelöscht werden können.  
 
 ## /LF30/
 Gruppen und deren Rechte anlegen, ändern und löschen
