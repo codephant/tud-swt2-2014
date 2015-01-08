@@ -51,7 +51,16 @@ Medien können zurückgegeben werden
   * Vorname
   * Nachname
   * Geburtstag
+    * Tag
+	* Monat
+	* Jahr
   * Adresse
+    * Land
+	* Postleitzahl
+	* Ort
+	* Straße
+	* Hausnummer
+	* Adresszusatz
 	
 ## /LD20/ Gruppen
   * Name
@@ -62,9 +71,22 @@ Medien können zurückgegeben werden
   * Medientyp
   * Titel
   * Autor
+    * Vorname
+	* Nachname
   * Verleger
+    * Name
+	* Adresse
+      * Land
+	  * Postleitzahl
+	  * Ort
+	  * Straße
+	  * Hausnummer
+	  * Adresszusatz
   * Auflage
   * Erscheinungsdatum
+    * Tag
+	* Monat
+	* Jahr
   * Status
   * Medienrechte
 	
@@ -72,12 +94,22 @@ Medien können zurückgegeben werden
   * Nutzer
   * Medium
   * Ausleihbeginn
+    * Tag
+	* Monat
+	* Jahr
   * Ausleihende
+	* Tag
+	* Monat
+	* Jahr
 	
 ## /LD50/ Vorbestellung
   * Nutzer
   * Medium
   * Zeitstempel
+	* Uhrzeit
+	* Tag
+	* Monat
+	* Jahr
 	
 ## /LD60/ Warnung
   * Nutzer
@@ -90,19 +122,21 @@ Medien können zurückgegeben werden
 	
 # Produktleistungen
 
-## /LL10/
-Einfach zugängliches User Interface
-
-## /LL20/
-Erreichbarkeit von allen Rechnern des Lehrstuhls
-
-## /LL30/
-Antwortszeiten bei Suchanfragen dürfen nicht mehr als 5 Sekunden betragen
+Das User Interface muss leicht zugänglich und verständlich sein. Außerdem ist es wichtig, dass die Software von allen Rechnern des Lehrstuls 
+aus erreicht werden kann. Die Antwortszeiten bei den Suchanfragen dürfen nicht länger als 5 Sekunden dauern.
   
 # Qualitätsanforderungen
   * Funktionalität: Wichtig
+    Es ist wichtig, dass die Software ihre Funktionen in vollen Umfang erfüllt.
   * Zuverlässigkeit: Sehr wichtig
+    Es ist sehr wichtig, dass die Software bei der Benutzung nicht abstürzt und keine Fehler bei der Benutzung auftreten.
   * Benutzbarkeit: Wichtig
+    Es ist wichtig, dass sich die Software leicht bedienen lässt. Das heißt, wichtige Funktionen sollen in wenigen Klicks erreichbar und gut findbar sein.
+	Des Weiteren soll die Anwendung nicht lange für die Reaktion auf Nutzereingaben brauchen.
   * Effizienz: Nicht Relevant
+    Es ist nicht relevant wie groß das fertige Software Paket ist. Auch die Geschwindigkeit steht nicht an erster Stelle. Allerdings sollte die Performance
+	nicht ganz ignoriert werden.
   * Änderbarkeit: Normal
+    Es sollte darauf geachtet werden, dass sich Teile der Software leicht ändern lassen. Hier liegt allerdings nicht der Hauptfocus.
   * Übertragbarkeit: Nicht Relevant
+    Es ist nicht wichtig, dass die Software auch auf anderen Systemen eingesetzt werden kann.
