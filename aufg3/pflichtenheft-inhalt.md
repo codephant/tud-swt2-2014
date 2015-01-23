@@ -3,25 +3,48 @@
 
 Das vorliegende Dokument befindet sich aktuell im Aufbau. Für die meisten Bereichen sind Stichpunkte als grobe Übersicht über den Inalt eingetragen. Einige Bereiche sind bereits ausformuliert.
 
+Stellen die Erweiterung bedürfen sind mit „(...)“ (ohne Anführungszeichen) gekennzeichnet.
+
 # Zielbestimmung
 
 Durch den Umzug der Fakultät und aller ihrer Lehrstühle ist das Problem der Verwaltung der Lehrstuhleigenen Bibliothek aufgekommen. Diese werden derzeit zumeist durch die Sekretärinnen, aber auch durch Mitarbeiter verwaltet, wobei   mit den Jahren der Überblick verloren geht. Deshalb soll ein neues rechnergestütztes System entworfen werden, dass bei der Verwaltung der Bibliotheksmedien helfen kann.
 
 ## Musskriterien
 
-- Nutzerverwaltung mit CRUD-Zugriff
-- Medienverwaltung mit CRUD-Zugriff
-- Nutzerrechteverwaltung via Nutzerrechtegruppen mit CRUD-Zugriff für Rechtegruppen
+### /MK010/ Nutzerverwaltung
+
+Nutzer müssen erstellt, verändert, gelöscht und deren Daten abgerufen werden können.
+
+### /MK020/ Nutzerrechteverwaltung
+
+Rechtegruppen müssen erstellt, verändert, gelöscht und deren Daten abgerufen werden können.
+Nutzern müssen Rechtegruppen zugewiesen werden können.
+
+### /MK030/ Ausleihe
+
+Die Ausleihe von Büchern müssen ins System eingetragen und ausgetragen werden können.
+Die Ausleihzeit muss verändert werden können.
 - Ausleihe und Rückgabe, Veränderung von Ausleihdaten
-- Katalog von jedem Rechner aus durchsuchbar
+
+### /MK040/ Mediensuche
+
+Der Mediendatenbestand muss nach passenden Metadaten oder passendem Inhalt durchsucht werden können.
 
 ## Wunschkriterien
 
-- Wenn Ausleihfrist fast abgelaufen, Ausleiher bekommt Nachricht zugesandt
+### /WK010/ Rückgabewarnung
+
+Der Ausleiher soll gewarnt werden, wenn die Ausleihe seiner Medien zuende geht.
+
+### /WK020/ Präsenzbestand
+
+In den Bestand, den das System verwaltet, können auch Präsenzbestandsexemplare eingebracht werden.
 
 ## Abgrenzungskriterien
 
-- Keine Schnittstelle für andere Peripheriegeräte als Maus und Tastatur
+### /AK010/ Peripheriegeräte
+
+Das System hat keine Schnittstellen für andere Peripheriegeräte als Maus und Tastatur.
 
 
 # Produkteinsatz
@@ -30,14 +53,18 @@ Das System wird auf allen Rechnern am Lehrstuhl zur Vefügung stehen und somit d
 
 ## Anwendungsbereich
 
+Das System ist im Verwaltungsbereich von Mediatheken und Bibliotheken einsetzbar. Es unterstützt die Datenhaltung betreffs Medien und Ausleihen. Es bildet dazu Vorgänge, wie z.B. "ausleihen", ab. 
+
 ## Zielgruppe
+
+Der Nutzer des System sind die Angestellten der Fakultätsbibliothek. Sie sind mit den Abläufen in einer Bibliothek vertraut.
 
 ## Betriebsbedingungen
 
 
 # Produktumgebung
 
-- Client/Server-Model mit Auslieferung via HTTP/HTML
+Das System wird mit Hilfe eines Web-Servers über HTTP/HTML im Intranet der Fakultät zur Verfügung gestellt. Auf den zugreifenden Rechnern muss dazu neben einem Betriebssystem ein passender Browser installiert sein.
 
 ## Software
 
@@ -147,75 +174,200 @@ Das System bietet eine Suche über den ganzen Katalog an mittels Meta- und Inhal
   
 # Produktdaten
 
+![Systemklassen](klassen.pdf)
+
 ## /PD010/ Nutzer
-  * Gruppen
-  * Vorname
-  * Nachname
-  * Geburtstag
-  * Adresse
-	
+
+Ein Nutzer des Systems ist eine Person, die mit dem System mittelbar oder unmittelbar interagiert. Diese Nutzer können im Bezug auf das System unterschiedliche Ziele haben. Die Nutzer verwenden das System um ihre Ziele zu erreichen.
+
+  * ID: Eine laufende Zahl, die den Nutzer eindeutig identifiziert.
+  * Gruppen: Eine Menge von Verweisen auf Rechtegruppen, die deutlich machen zu welche Rechte der Nutzer hat.
+  * Vorname: Eine Zeichenkette, die den Rufnamen des Nutzers darstellt.
+  * Nachname: Eine Zeichenkette
+  * Geburtstag: Eine Datumsangabe, bestehend aus Tag, Monat und Jahr nach dem Gregorianischen Kalender.
+  * Adresse: Eine Internationale Adresse, bestehend aus
+    * Land: Eine Zeichenkette, die den Namen eines anerkannten Landes darstellt.
+    * Postleitzahl: Eine Zeichenkette, die nur aus Ziffern besteht und einen postalischen Distrikt im Land der Adresse darstellt.
+    * Ort: Eine Zeichenkette, die den Namen einer Ortschaft im Land der Adresse darstellt.
+    * Straße: Eine Zeichenkette.
+    * Hausnummer: Eine Ganzzahl.
+    * Adresszusatz: Eine beliebige Zeichenkette.
+
 ## /PD020/ Gruppen
-  * Name
-  * Rechte
-	
-## /PD030/ Medien
-  * International standardisierte Nummer
-  * Medientyp
-  * Titel
-  * Autor
-  * Verleger
-  * Auflage
-  * Erscheinungsdatum
-  * Status
-  * Medienrechte
-	
+
+Eine Nutzerrechtegruppe ist eine Sammlung von Rechten, die einem Nutzer gewährt werden können, indem ihm die Gruppe zugeordnet wird.
+
+  * ID: Eine laufende Zahl, die die Gruppe eindeutig identifiziert
+  * Name: Eine Zeichenkette, die der Gruppe eine repräsentative, für Menschen verständliche Bezeihnung gibt.
+  * Rechte: (...);
+
+## /PD030/ Medium
+
+Ein Medium ist ein audiovisuelles Schöpferwerk. Es ist in Media-/Bibliotheken potentiell ausleihbar. Es ist nicht die konkrete Instanz, sondern die Sammlung seiner Metadaten.
+
+  * ID: Eine Ganzzahl; laufende Nummer, die das Medium eindeutig im Bestand der Media-/Bibliothek identifiziert.
+  * ISNTyp: Eine Zeichenkette, die den Typ der Internationalen Standard Nummer beschreibt.
+  * ISN: Eine Zeichenkette von Ziffern, die das Medium im Sinne seines ISNTypes eindeutig identifiziert.
+  * Medientyp: Eine Zeichenkette, die deutlich macht, um was für eine Art Medium (Buch, Magazin, AudioCD, DVD o.A.) es sich handelt.
+  * Titel: Eine Zeichenkette, der Name des Werkes.
+  * Urheber: Eine Zeichenkette, der Name einer Person, die sich als Schöpfer des Werkes verantwortlich zeichnet.
+  * Herausgeber: Eine Zeichenkette, der Name des Vertreibers des Mediums.
+  * Revision: Eine Zahl, die die Produktionsserie des Mediums darstellt.
+  * Erscheinungsdatum: Eine Datum nach dem Gregorianischen Kalender bestehend aus Jahr, Monat und Tag.
+  * Status: (...).
+
 ## /PD040/ Ausleihe
-  * Nutzer
-  * Medium
-  * Ausleihbeginn
-  * Ausleihende
-	
+
+Eine Ausleihe ist der Zustand, der entsteht wenn eine Instanz eines Mediums zum Konsum an einen Nutzer ausgegeben wird. Er endet, wenn dieser Nutzer das Medium zurück an die Bibliothek gibt.
+
+  * ID: Eine Ganzzahl; laufende Nummer, die die Ausleihe eindeutig identifiziert.
+  * Nutzer: Ein Verweis auf den Nutzer, der das Medium ausgeliehen hat.
+  * Medium: Ein Verweis auf das Medium, das ausgeliehen wurde.
+  * Ausleihbeginn: Eine Datumsangabe nach dem Gregorianischen Kalender, bestehend aus Jahr, Monat und Tag; der Tag der Ausleihe und Beginn der Ausleihfrist.
+  * Ausleihende: Eine Datumsangabe nach dem Gregorianischen Kalender, bestehend aus Jahr, Monat und Tag; der Tag an dem das Medium spätestens zurückgegeben werden muss.
+
 ## /PD050/ Vorbestellung
-  * Nutzer
-  * Medium
-  * Zeitstempel
-	
+
+Eine Vorbestellung beschreibt, den Wunsch eines Nutzers ein bestimmtes Medium auszuleihen. Das Medium ist aber aktuell in der Bibliothek nicht ausleihbar vorhanden.
+
+  * ID: Eine Ganzzahl; laufende Nummer, die die Vorbestellung eindeutig identifiziert.
+  * Nutzer: Ein Verweis auf den Nutzer, der das Medium ausleihen möchte.
+  * Medium: Ein Verweis auf das Medium, das ausgeliehen werden soll und aktuell nicht im Bestand ist.
+  * Zeitstempel: Bestehend aus
+    * Datum: Bestehend aus Jahr, Monat und Tag.
+    * Zeit: Bestehend aus Stunde, Minute und Sekunde.
+
 ## /PD60/ Warnung
-  * Nutzer
-  * Medium
-  * Inhalt
-  
+
+Warnungen sind Nachrichten. Sie informieren den Nutzer darüber, dass eine ihm zugeordnete Ausleihe im Begriff ist auszulaufen.
+
+  * Nutzer: Ein Verweis auf den Nutzer, der die Warnung erhalten soll.
+  * Medium: Ein Verweis auf das Medium, dessen Ausleihfrist zuende geht.
+  * Inhalt: Eine Zeichenkette, die eine zusätzliche Erklärung zur Warnung liefert.
+
 ## /PD70/ Bestand
-  * Medium
-  * Stückzahl
+
+Ein Bestand ist ein Konglomerat von vielen Instanzen von Medien. Ein Bestand ist fest mit einer gegebenen Bibliothek verbunden.
+
+  * Medium: Ein Verweis auf das Medium, das in den Bestand aufgenommen ist.
+  * Stückzahl: Eine Ganzzahl, die die Menge der zum Bestand gehörigen Exemplare angibt.
+  * Präsenz: Eine Ganzzahl, die angibt wieviele der Exemplare zum Präsenzbestand gehören. Dieses Zahl muss kleiner gleich der Stückzahl sein.
 
 # Produktleistungen
 
-## /PL10/
-Einfach zugängliches User Interface
+## /PL10/ Einfach verständliche Oberfläche
+
+Die Benutzeroberfläche muss leicht verständlich sein und sollte nicht mehr als zwei Stunden zur Einarbeitung benötigen.
 
 ## /PL20/
-Erreichbarkeit von allen Rechnern des Lehrstuhls
+
+Die Software muss von allen Computern im Fakultätsintranet aus erreichbar sein. Computer außerhalb dieses Netzwerks dürfen keinen Zugriff auf den Bibliotheksbestand haben.
 
 ## /PL30/
-Antwortszeiten bei Suchanfragen dürfen nicht mehr als 5 Sekunden betragen
+
+Antwortszeiten bei Suchanfragen dürfen vom Absenden der Anfrage bis zur Darstellung erster Suchergebnisse nicht mehr als 5 Sekunden betragen.
 
 # Benutzeroberfläche
 
+(...)
 (Die Benutzeroberflächen-Vorschauen sind ausgelassen, obwohl referenziert.)
-  
+
 # Qualitätszielbestimmung
   * Funktionalität: Wichtig
+    Es ist wichtig, dass die Software ihre Funktionen in vollen Umfang erfüllt.
   * Zuverlässigkeit: Sehr wichtig
+    Es ist sehr wichtig, dass die Software bei der Benutzung nicht abstürzt und keine Fehler bei der Benutzung auftreten.
   * Benutzbarkeit: Wichtig
+    Es ist wichtig, dass sich die Software leicht bedienen lässt. Das heißt, wichtige Funktionen sollen in wenigen Klicks erreichbar und gut findbar sein.
+    Des Weiteren soll die Anwendung nicht lange für die Reaktion auf Nutzereingaben brauchen.
   * Effizienz: Nicht Relevant
+    Es ist nicht relevant wie groß das fertige Software Paket ist. Auch die Geschwindigkeit steht nicht an erster Stelle. Allerdings sollte die Performance
+    nicht ganz ignoriert werden.
   * Änderbarkeit: Normal
+    Es sollte darauf geachtet werden, dass sich Teile der Software leicht ändern lassen. Hier liegt allerdings nicht der Hauptfocus.
   * Übertragbarkeit: Nicht Relevant
+    Es ist nicht wichtig, dass die Software auch auf anderen Systemen eingesetzt werden kann.
 
 # Globale Testszenarien/Akzeptanztestfälle
 
-- Kompletter Ablauf einer Ausleihe mit Verlängerung
-- Neuanschaffung eines Medium
-. Eintragung eines neuen Medienverwalters
+Das System wird in Produktionsumgebung durch Angestellte der Biobliothek unter Aufsicht von Testern getestet. Dabei werden alle durch die Abbildung „Anwendungsfälle“ beschriebenen Tätigkeiten durch die Testenden ausgeführt.
+
+![Anwendungsfälle](sa-usecases.pdf)
 
 # Glossar/Ontologie
+
+\begin{verbatim}
+Bestand :: {Medium}^n. // Datenstruktur aller Medien
+
+Medium ::= Mediumdaten 
+		+ Status
+		+ Medienrechte
+		+ Stückzahl.
+
+Mediumdaten ::= Medientyp
+		+ Titel
+		+ Autor 
+		+ (Verlag) 
+		+ (Auflage) 
+		+ Erscheinungsdatum 
+		+ Id.
+
+Medientyp ::= Datenträger
+		| Zeitschrift
+		| Broschüre
+		| Buch.
+
+Datenträger ::= CD
+		| DVD.
+
+Status ::= [verfügbar
+		| ausgeliehen]
+		+ vorbestellt.
+
+Suchdaten ::= 1 { [ Inhaltausschnitt
+		| Medientyp 
+		| Titel
+		| Author 
+		| Verlag 
+		| Auflage 
+		| Erscheinungsdatum
+		| Id ] } n.
+
+Id ::= ISBN
+		| ISSN
+		| ISMN.
+
+Warnung ::= Id 
+		+ Nutzer 
+		+ Medium 
+		+ Inhalt.
+
+Nutzer ::= Nutzerdaten 
+		+ Gruppe.
+
+Nutzerdaten ::= Vorname 
+		+ Nachname 
+		+ Geburtsdatum 
+		+ Adresse
+		+ Nutzername 
+		+ Kennwort. 
+
+Gruppe ::= Name 
+		+ Rechte. 
+
+Rechte ::= Ausleihe
+		+ Datenpflege
+		+ Administration. 
+
+Medienrechte ::= Ausliehbar
+		+ (MaxAusleihdauer).
+
+Ausleihe ::= Nutzer
+		+ Medium
+		+ Ausleihbeginn
+		+ Ausleihende.
+
+Vorbestellung ::= Nutzer
+		+ Medium
+		+ Zeitstempel. 
+\end{verbatim}
