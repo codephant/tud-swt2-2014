@@ -1,0 +1,18 @@
+Schritte
+========
+
+1. Vertrautmachen mit WSDL
+2. Wie wird Java zu WSDL? Wie funktioniert Bibliothek?
+3. Java-Testklasse konzipieren
+4. Testklasse implementieren
+5. Konversion zu WSDL mit alter Bibliothek
+6. Konversion zu WSDL mit neuer Bibliothek
+7. Vergleichen der beiden XML
+
+Vergleichen der XML
+===================
+
+Möglicher Vergleichsalgorithmus
+-------------------------------
+
+
