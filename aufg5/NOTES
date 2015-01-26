@@ -9,10 +9,15 @@ Schritte
 6. Konversion zu WSDL mit neuer Bibliothek
 7. Vergleichen der beiden XML
 
+
 Vergleichen der XML
 ===================
 
-Möglicher Vergleichsalgorithmus
--------------------------------
+Wird mittel XMLUnit gemacht.
 
 
+Anmerkungen zur Aufgabe
+=======================
+
+Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterungstrenner (".")
+beinhalten, führen zum Absturz der modifizierten Java2WSDL.

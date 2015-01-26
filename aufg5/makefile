@@ -1,23 +1,17 @@
-J2WSDL	= "org.apache.axis.wsdl.Java2WSDL"
 CP		= lib/*:bin
-DIFF	= git diff --no-index
-LOC		= http://www.example.org/de/tu-dresden/inf/swt/2/ws2014/regtest
-NS		= $(LOC)/ns
 
-all : diff/Test.diff
+.SILENT : test
 
-diff/%.diff : old/%.wsdl new/%.wsdl
-	$(DIFF) old/$(*F).wsdl new/$(*F)_impl.wsdl > $@ 
+all : bin/NoMethod.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
 
-old/%.wsdl : bin/%.class
-	java -cp old/$(CP) $(J2WSDL) -o $@ -l $(LOC)/$* -n $(NS) $*
+# This is meant be used like "$(make test) <TestClassName>" in a shell
+test :
+	echo 'java -cp bin:lib/* org.junit.runner.JUnitCore' 
 
-new/%.wsdl : bin/%.class
-	java -cp new/$(CP) $(J2WSDL) -o $@ -l $(LOC)/$* -n $(NS) $*
+%.class : bin/%.class 
 
 bin/%.class : src/%.java
-	javac -d bin $<
+	javac -classpath "$(CP)" -d bin "$<"
 
 purge :
-	rm -fr bin/*.class old/*.wsdl new/*.wsdl
-	rm -fr diff/*.diff
+	rm -fr bin/*.class wsdl/*
