@@ -1,11 +1,29 @@
-import java.io.File;
 import java.lang.ProcessBuilder;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.lang.StringBuffer;
 
 public final class RegressionHelpers
 {
 	public static final String J2WsdlClass = "org.apache.axis.wsdl.Java2WSDL";
 
 	public static final String LocationBase = "http://www.example.org/de/tu-dresden/inf/swt/2/ws2014/regtest";
+
+	public static String loadXmlString (File xmlFile)
+		throws java.io.IOException, org.xml.sax.SAXException
+	{
+		StringBuffer xmlBuf = new StringBuffer();
+		BufferedReader read = new BufferedReader(new FileReader(xmlFile));
+		String line;
+
+		for (line = read.readLine(); line != null; line = read.readLine())
+		{
+			xmlBuf.append(line);
+		}
+		
+		return xmlBuf.toString();
+	}
 
 	public static void convert2WsdlWithLib (String className, String libVer, String fileName)
 		throws java.lang.InterruptedException, java.io.IOException

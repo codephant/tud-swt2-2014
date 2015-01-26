@@ -7,9 +7,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.lang.StringBuffer;
 
 public class J2WsdlRegrTest
 {
@@ -40,25 +37,15 @@ public class J2WsdlRegrTest
 	public void sameNoMethodXML ()
 		throws java.io.IOException, org.xml.sax.SAXException
 	{
-		StringBuffer oldXmlBuf = new StringBuffer();
-		StringBuffer newXmlBuf = new StringBuffer();
-		String line;
-		File oldFile = RegressionHelpers.getWsdlDir("NoMethod", "old").listFiles()[0];
-		File newFile = RegressionHelpers.getWsdlDir("NoMethod", "new").listFiles()[0];
-		BufferedReader bf;
+		File xmlFile;
+		String oldXML;
+		String newXML;
 
-		bf = new BufferedReader(new FileReader(oldFile));
-		for(line = bf.readLine(); line != null; line = bf.readLine())
-		{
-			oldXmlBuf.append(line);
-		}
-		
-		bf = new BufferedReader(new FileReader(newFile));
-		for(line = bf.readLine(); line != null; line = bf.readLine())
-		{
-			newXmlBuf.append(line);
-		}
+		xmlFile = RegressionHelpers.getWsdlDir("NoMethod", "old").listFiles()[0];
+		oldXML = RegressionHelpers.loadXmlString(xmlFile);
+		xmlFile = RegressionHelpers.getWsdlDir("NoMethod", "new").listFiles()[0];
+		newXML = RegressionHelpers.loadXmlString(xmlFile);
 
-		assertXMLEqual("NoMethod", oldXmlBuf.toString(), newXmlBuf.toString());
+		assertXMLEqual("NoMethod", oldXML, newXML);
 	}
 }
