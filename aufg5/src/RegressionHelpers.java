@@ -11,10 +11,10 @@ public final class RegressionHelpers
 		throws java.lang.InterruptedException, java.io.IOException
 	{
 		ProcessBuilder pb = new ProcessBuilder();
-		String wsdlFile = getWsdlFilePath(className, libVer, fileName);
+		File wsdlFile = getWsdlFile(className, libVer, fileName);
 
 		// Make sure the parent directory exists
-		new File(wsdlFile).getParentFile().mkdirs();
+		wsdlFile.getParentFile().mkdirs();
 
 		String[] cmd = new String[]
 			{ "java"
@@ -23,7 +23,7 @@ public final class RegressionHelpers
 			, J2WsdlClass
 			, "-n", String.format("%s/ns", LocationBase)
 			, "-l", String.format("%s/%s", LocationBase, className)
-			, "-o", wsdlFile
+			, "-o", wsdlFile.getPath()
 			, className
 			};
 
@@ -31,9 +31,15 @@ public final class RegressionHelpers
 		pb.start().waitFor();
 	}
 
-	public static String getWsdlFilePath (String className, String libVer, String fileName)
+	public static File getWsdlDir (String className, String libVer)
 	{
-		return String.format("wsdl/%s/%s/%s", className, libVer, fileName);
+		return new File(String.format("wsdl/%s/%s", className, libVer));
+	}
+
+	public static File getWsdlFile (String className, String libVer, String fileName)
+	{
+		return new File(String.format("%s/%s",
+			getWsdlDir(className, libVer).getPath(), fileName));
 	}
 
 	public static void prepareWsdlDir ()
