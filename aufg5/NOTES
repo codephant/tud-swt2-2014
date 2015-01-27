@@ -1,5 +1,18 @@
-Schritte
-========
+Build/Test commands
+===================
+
+make all
+	Kompiliert alle Java-Klassen.
+
+$(make test) <ClassName>
+	Run the test class <ClassName> (without file extension).
+
+make all && $(make test) <ClassName>
+	Kompiliere und führe aus.
+
+
+ToDo
+====
 
 Entwicklungsvorgehen
 --------------------
@@ -53,22 +66,28 @@ Die Bibliotheksversion muss bei unterschiedlichen Kompilaten unterschiedlich sei
 2. XML-Namespaces testen
 ------------------------
 
-XML-Namespaces werden auf Gleicheit getestet.
+XML-Namespaces werden auf Gleichheit getestet.
 
 3. Welche Interfaces testen?
 ----------------------------
 
-- Methodenanzahl: 0, viele
-- Methodensignatur:
-	- Returntypen
-	- Parametertypen
-	- Anzahl von Parametern
-	- Methodensichtbarkeit (public, protected, private)
-	- Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
-	- Exceptions
-	- Überschreibbarkeit (final)
-	- Annotationen (@...)
+### Testbare Aspekte von Interfaces
 
-- Methodenparameter
-	- Bezeichner:
-		- Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+* Methodenanzahl: 0, viele
+* Methodensignatur:
+	* Returntypen
+	* Parametertypen
+	* Anzahl von Parametern
+	* Methodensichtbarkeit (public, protected, private)
+	* Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
+	* Exceptions
+	* Überschreibbarkeit (final)
+	* Annotationen (@...)
+
+* eigene Typen
+	* als Param
+	* als Return
+
+* Methodenparameter
+	* Bezeichner:
+		* Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099

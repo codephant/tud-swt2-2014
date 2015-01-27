@@ -16,6 +16,23 @@ public class J2WsdlRegrTest
 		RegressionHelpers.prepareWsdlDir();
 	}
 
+	//@Test
+	//public void filesHaveNoExtName ()
+		//throws java.lang.InterruptedException, java.io.IOException
+	//{
+		//final String Class = "NoMethod";
+		//final String FileName = "xml";
+		//RegressionHelpers.convert2WsdlWithLib(Class, "old", FileName);
+		//RegressionHelpers.convert2WsdlWithLib(Class, "new", FileName);
+		//File oldWsdlDir = RegressionHelpers.getWsdlDir(Class, "old");
+		//File newWsdlDir = RegressionHelpers.getWsdlDir(Class, "new");
+		//String newFileName = oldWsdlDir.list()[0];
+		//String oldFileName = newWsdlDir.list()[0];
+//
+		//assertEquals("Generate files with no extension",
+			//oldFileName, newFileName);
+	//}
+
 	@Test
 	public void filesHaveSameName ()
 		throws java.lang.InterruptedException, java.io.IOException

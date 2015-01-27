@@ -6,7 +6,7 @@ all : bin/NoMethod.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
 
 # This is meant be used like "$(make test) <TestClassName>" in a shell
 test :
-	echo 'java -cp bin:lib/* org.junit.runner.JUnitCore' 
+	echo 'java -cp $(CP) org.junit.runner.JUnitCore' 
 
 %.class : bin/%.class 
 
