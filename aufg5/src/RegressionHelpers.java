@@ -38,7 +38,7 @@ public final class RegressionHelpers
 			xmlBuf.append(line);
 		}
 
-		//TODO close BufferedReader/File
+		read.close();
 		
 		return xmlBuf.toString();
 	}
