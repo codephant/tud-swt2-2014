@@ -1,23 +1,74 @@
 Schritte
 ========
 
+Entwicklungsvorgehen
+--------------------
+
 1. Vertrautmachen mit WSDL
 2. Wie wird Java zu WSDL? Wie funktioniert Bibliothek?
 3. Java-Testklasse konzipieren
+	3.1. Vorausgehende Nicht-XML-basierte Tests planen
+	3.2. XML-basierte Tests planen
+		3.2.1. Auswahl der zu konvertierenden Java-Interfaces
+			* Welche Anforderungen erfüllt Java2WSDL?
+			* Welche sinnvollen Möglichkeiten der Varianz von Java-Interfaces?
+			* Welche XML-Knoten müssen berücksichtigt werden welche nicht?
 4. Testklasse implementieren
-5. Konversion zu WSDL mit alter Bibliothek
-6. Konversion zu WSDL mit neuer Bibliothek
-7. Vergleichen der beiden XML
+	* unter Umständen schreiben von eigenen spezifischen XML-Komparatoren
+
+Genereller Test-Ablauf
+----------------------
+
+1. Konversion zu WSDL mit alter Bibliothek
+2. Konversion zu WSDL mit neuer Bibliothek
+3. Vergleichen der beiden XML
 
 
 Vergleichen der XML
 ===================
 
-Wird mittel XMLUnit gemacht.
+Zum Vergleichen der XML-Bäume wird XMLUnit (org.custommonkey.xmlunit) genutzt.
 
 
 Anmerkungen zur Aufgabe
 =======================
 
+Conversion in Dateien ohne Extension
+------------------------------------
+
 Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterungstrenner (".")
 beinhalten, führen zum Absturz der modifizierten Java2WSDL.
+
+
+Treffen 2015-01-27
+==================
+
+1. Behandlung von Kommentarknoten
+---------------------------------
+
+Kommentarknoten sollen nicht beim Vergleich geprüft werden, da die beide
+Bibliotheksversionen nur einen schreiben, der die Bibliotheksversion beinhaltet.
+Die Bibliotheksversion muss bei unterschiedlichen Kompilaten unterschiedlich sein.
+
+2. XML-Namespaces testen
+------------------------
+
+XML-Namespaces werden auf Gleicheit getestet.
+
+3. Welche Interfaces testen?
+----------------------------
+
+- Methodenanzahl: 0, viele
+- Methodensignatur:
+	- Returntypen
+	- Parametertypen
+	- Anzahl von Parametern
+	- Methodensichtbarkeit (public, protected, private)
+	- Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
+	- Exceptions
+	- Überschreibbarkeit (final)
+	- Annotationen (@...)
+
+- Methodenparameter
+	- Bezeichner:
+		- Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
