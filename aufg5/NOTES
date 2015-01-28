@@ -11,23 +11,25 @@ make all && $(make test) <ClassName>
 	Kompiliere und führe aus.
 
 
-ToDo
-====
+Vorgehen
+========
 
-Entwicklungsvorgehen
+Entwicklung
 --------------------
 
 1. Vertrautmachen mit WSDL
 2. Wie wird Java zu WSDL? Wie funktioniert Bibliothek?
 3. Java-Testklasse konzipieren
-	3.1. Vorausgehende Nicht-XML-basierte Tests planen
-	3.2. XML-basierte Tests planen
-		3.2.1. Auswahl der zu konvertierenden Java-Interfaces
+	1. Vorausgehende Nicht-XML-basierte Tests planen
+	2. XML-basierte Tests planen
+		1. Auswahl der zu konvertierenden Java-Interfaces
 			* Welche Anforderungen erfüllt Java2WSDL?
 			* Welche sinnvollen Möglichkeiten der Varianz von Java-Interfaces?
 			* Welche XML-Knoten müssen berücksichtigt werden welche nicht?
 4. Testklasse implementieren
 	* unter Umständen schreiben von eigenen spezifischen XML-Komparatoren
+	1. Testinterfaces mit Hilfe von Punkt ""
+
 
 Genereller Test-Ablauf
 ----------------------
@@ -37,11 +39,40 @@ Genereller Test-Ablauf
 3. Vergleichen der beiden XML
 
 
-Anmerkungen aus/zur Entwicklung
-===============================
-
 Testplanung
------------
+===========
+
+Vergleichen der XML
+-------------------
+
+Zum Vergleichen der XML-Bäume wird XMLUnit (NS org.custommonkey.xmlunit) genutzt.
+
+
+Testbare Aspekte von Interfaces
+-------------------------------
+
+* Methodenanzahl: 0, viele
+* Methodensignatur:
+	* Returntypen
+	* Parametertypen
+	* Anzahl von Parametern
+	* Methodensichtbarkeit (public, protected, private)
+	* Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
+	* Exceptions
+	* Überschreibbarkeit (final)
+	* Annotationen (@...)
+
+* eigene Typen
+	* als Param
+	* als Return
+
+* Methodenparameter
+	* Bezeichner:
+		* Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+
+
+Anmerkungen zur Umsetzung
+-------------------------
 
 ### Nicht im Regressionstest
 
@@ -53,9 +84,13 @@ Regressionstest.
 ### XML-Knoten-Reihenfolge
 
 Das Vergleichen von XML-Bäumen ist nicht einfach oder trivial, da z.B. die
-Reihenfolge von Knoten von Knotentyp und Semantik der konkreten XML-Sprache
+Knotenreihenfolge von Knotentyp und Semantik der konkreten XML-Sprache
 abhängig ist. Um die Tests einfach zu halten, sollen daher XML-Test das Testen
 mit Berücksichtigung der Reihenfolge bevorzugen.
+
+Ferner gibt es nicht viele Gründe, warum eine Bibliothek plötzlich nach einer
+Änderung die Reihenfolge beim Schreiben der Objekte ändert, zumal die Bibliothek
+selber das Schreiben wahrscheinlich nicht selber übernimmt.
 
 
 ### XML-Kommentare
@@ -64,19 +99,26 @@ Da Kommentare nicht zum eigentlichen Datenbestand (Payload) eines XML-Baumes
 gehören, sollen diese beim Vergleichen unberücksichtigt bleiben.
 
 
-Vergleichen der XML
--------------------
+Anmerkung aus der Entwicklung
+=============================
 
-Zum Vergleichen der XML-Bäume wird XMLUnit (NS org.custommonkey.xmlunit) genutzt.
-
-
-Modifizierte Axis-Version
--------------------------
+Hindernisse beim Testen
+-----------------------
 
 ### Conversion in Dateien ohne Extension
 
-Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterung (".wsdl")
-beinhalten, führen zum Absturz der modifizierten Java2WSDL.
+Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterung (z.B. ".wsdl")
+beinhalten, führen zum Absturz der modifizierten Java2WSDL. Das verhindert im
+Grunde das Ausführen von weiteren Tests. Dieses Problem muss in
+Komponententests abgedeckt werden.
+
+
+### Kommentarknoten mit Version
+
+Beim ersten Testen stellte sich heraus, das der Test schon durch einen
+Kommentarknoten im XML scheitert. Dieser enthält die Version der Bibliothek und
+ist durch die Modifizierung der Axis-Bibliothek natürlich verschieden und darf
+nicht zum Vergleich herangezogen werden.
 
 
 Treffen 2015-01-27
@@ -89,10 +131,12 @@ Kommentarknoten sollen nicht beim Vergleich geprüft werden, da die beide
 Bibliotheksversionen nur einen schreiben, der die Bibliotheksversion beinhaltet.
 Die Bibliotheksversion muss bei unterschiedlichen Kompilaten unterschiedlich sein.
 
+
 2. XML-Namespaces testen
 ------------------------
 
 XML-Namespaces werden auf Gleichheit getestet.
+
 
 3. Welche Interfaces testen?
 ----------------------------
