@@ -5,7 +5,7 @@ make all
 	Kompiliert alle Java-Klassen.
 
 $(make test) <ClassName>
-	Run the test class <ClassName> (without file extension).
+	Testklasse <ClassName> (ohne Dateierweiterung) ausführen.
 
 make all && $(make test) <ClassName>
 	Kompiliere und führe aus.
@@ -37,19 +37,45 @@ Genereller Test-Ablauf
 3. Vergleichen der beiden XML
 
 
+Anmerkungen aus/zur Entwicklung
+===============================
+
+Testplanung
+-----------
+
+### Nicht im Regressionstest
+
+Es wird nicht getestet, ob eine Datei generiert wird, denn das sollte im
+Komponenten-Test der neuen Teile geschehen sein. Es ist somit kein Teil des
+Regressionstest.
+
+
+### XML-Knoten-Reihenfolge
+
+Das Vergleichen von XML-Bäumen ist nicht einfach oder trivial, da z.B. die
+Reihenfolge von Knoten von Knotentyp und Semantik der konkreten XML-Sprache
+abhängig ist. Um die Tests einfach zu halten, sollen daher XML-Test das Testen
+mit Berücksichtigung der Reihenfolge bevorzugen.
+
+
+### XML-Kommentare
+
+Da Kommentare nicht zum eigentlichen Datenbestand (Payload) eines XML-Baumes
+gehören, sollen diese beim Vergleichen unberücksichtigt bleiben.
+
+
 Vergleichen der XML
-===================
+-------------------
 
-Zum Vergleichen der XML-Bäume wird XMLUnit (org.custommonkey.xmlunit) genutzt.
+Zum Vergleichen der XML-Bäume wird XMLUnit (NS org.custommonkey.xmlunit) genutzt.
 
 
-Anmerkungen zur Aufgabe
-=======================
+Modifizierte Axis-Version
+-------------------------
 
-Conversion in Dateien ohne Extension
-------------------------------------
+### Conversion in Dateien ohne Extension
 
-Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterungstrenner (".")
+Output-Dateien (Java2WSDL-"-o"-Option) die keinen Dateierweiterung (".wsdl")
 beinhalten, führen zum Absturz der modifizierten Java2WSDL.
 
 
