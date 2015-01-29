@@ -1,0 +1,4 @@
+# Ignore diff files
+*.diff
+# Ignore bin directory
+bin
