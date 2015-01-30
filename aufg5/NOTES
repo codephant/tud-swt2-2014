@@ -161,3 +161,44 @@ XML-Namespaces werden auf Gleichheit getestet.
 * Methodenparameter
 	* Bezeichner:
 		* Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+
+Arbeit 2015-01-29
+=================
+
+1. Behandlung von Kommentarknoten
+---------------------------------
+
+Wir haben schon XMLUnit konfiguriert, um Kommentare zu ignorieren. 
+
+2. XML-Namespaces testen
+------------------------
+
+XMLUnit Nutzung ändert. Wir nutzen nun ein "Diff" Objekt des XMLUnits.
+Danach, überschreiben wir das DifferenceListener des "Diff"s mit ein "custom" DifferenceListener, das notwendige attribute der XML Elementen ignoriere, nämlich "xmlns:apachesoap", "transport" und "name". 
+Endlich, vergleich wir mit XMLAssert.assertTrue()
+
+3. Welche Interfaces testen
+----------------------------
+
+### Testbare Aspekte von Interfaces
+
+* [ ] Methodenanzahl
+	* [X] 0
+	* [ ] viele
+* [ ] Methodensignatur:
+	* [ ] Returntypen
+	* [ ] Parametertypen
+	* [ ] Anzahl von Parametern
+	* [ ] Methodensichtbarkeit (public, protected, private)
+	* [ ] Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
+	* [ ] Exceptions
+	* [ ] Überschreibbarkeit (final)
+	* [ ] Annotationen (@...)
+
+* [ ] eigene Typen
+	* [ ] als Param
+	* [ ] als Return
+
+* [ ] Methodenparameter
+	* [ ] Bezeichner:
+		* [ ] Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
