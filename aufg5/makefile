@@ -2,7 +2,7 @@ CP		= lib/*:bin
 
 .SILENT : test
 
-all : bin/NoMethod.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
+all : bin/ManyMethods.class bin/myDifferenceListener.class bin/NoMethod.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
 
 # This is meant be used like "$(make test) <TestClassName>" in a shell
 test :
