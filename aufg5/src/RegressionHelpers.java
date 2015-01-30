@@ -33,9 +33,10 @@ public final class RegressionHelpers
 		BufferedReader read = new BufferedReader(new FileReader(xmlFile));
 		String line;
 
-		for (line = read.readLine(); line != null; line = read.readLine())
-		{
+		line = read.readLine();
+		while(line != null){
 			xmlBuf.append(line);
+			line = read.readLine();
 		}
 
 		read.close();
@@ -75,7 +76,7 @@ public final class RegressionHelpers
 	}
 
 	/**
-	 * Construct an abstract file, which respresents the folder to which the
+	 * Construct an abstract file, which respresents the directory to which the
 	 * WSDL files for a certain class and library version should be written.
 	 * "libVer" can be either String("old") or String("new")
 	 */

@@ -46,7 +46,7 @@ public class J2WsdlRegrTest
 		String newFileName = oldWsdlDir.list()[0];
 		String oldFileName = newWsdlDir.list()[0];
 
-		assertEquals("Generated files have the same name",
+		assertEquals("Generated files have different names.",
 			oldFileName, newFileName);
 	}
 
@@ -63,6 +63,6 @@ public class J2WsdlRegrTest
 		xmlFile = RegressionHelpers.getWsdlDir("NoMethod", "new").listFiles()[0];
 		newXML = RegressionHelpers.loadXmlString(xmlFile);
 
-		assertXMLEqual("NoMethod", oldXML, newXML);
+		assertXMLEqual("The NoMethod XML files are not identical", oldXML, newXML);
 	}
 }
