@@ -2,7 +2,7 @@ CLEANFILES=*.out *.aux *.log *heft-inhalt.tex
 
 lastenheft.tex: lastenheft-inhalt.tex
 
-pflichtenheft.tex: pflichtenheft-inhalt.tex sa-usecases.pdf
+pflichtenheft.tex: pflichtenheft-inhalt.tex sa-usecases.pdf klassen.pdf
 
 %heft.purge : clean
 	rm -f $*heft.pdf
