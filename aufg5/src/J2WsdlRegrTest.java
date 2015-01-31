@@ -36,7 +36,7 @@ public class J2WsdlRegrTest
 		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
 		// use the custom assert to provide complete XML diff on failure
-		RegressionHelpers.assertXMLSimilar("$testDescription", oldXML, newXML);
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 	 */
 
@@ -68,7 +68,7 @@ public class J2WsdlRegrTest
 		String oldFileName = RegressionHelpers.getWsdlDir(Class, "old").list()[0];
 		String newFileName = RegressionHelpers.getWsdlDir(Class, "new").list()[0];
 
-		Assert.assertEquals("Generated files have same name.",
+		Assert.assertEquals("Generated files should have same name.",
 			oldFileName, newFileName);
 	}
 
@@ -81,7 +81,7 @@ public class J2WsdlRegrTest
 		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
 		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
-		RegressionHelpers.assertXMLSimilar("NoMethod is similar", oldXML, newXML);
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 
 	@Test
@@ -93,9 +93,24 @@ public class J2WsdlRegrTest
 		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
 		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
-		RegressionHelpers.assertXMLSimilar("ManyMethods", oldXML, newXML);
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 	
+	@Test
+	public void returnTypesTest()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "ReturnTypes";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
 
 	@Ignore
 	@Test

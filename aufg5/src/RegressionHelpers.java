@@ -52,6 +52,7 @@ public final class RegressionHelpers
 		if (!diff.similar())
 		{
 			failMsg.append(format("%s XML differs in:\n", msg));
+			// Unchecked cast
 			for (Difference d : (java.util.List<Difference>)diff.getAllDifferences())
 			{
 				ctrlND = d.getControlNodeDetail();

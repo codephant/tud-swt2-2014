@@ -1,5 +1,5 @@
 CP		= lib/*:bin
-TESTIFACES = bin/SameFileName.class bin/NoMethod.class bin/ManyMethods.class
+TESTIFACES = bin/SameFileName.class bin/NoMethod.class bin/ManyMethods.class bin/ReturnTypes.class
 
 .SILENT : test
 
