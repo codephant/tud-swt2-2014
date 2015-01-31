@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.custommonkey.xmlunit.XMLAssert;
 
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -15,9 +16,7 @@ public class J2WsdlRegrTest
 	@BeforeClass
 	public static void setUp(){
 		RegressionHelpers.prepareWsdlDir();
-  	XMLUnit.setIgnoreWhitespace(true); 
-  	XMLUnit.setNormalizeWhitespace(true); 
-  	XMLUnit.setIgnoreComments(true);
+		RegressionHelpers.setupXMLUnit();
 	}
 
 	// @Test
@@ -41,62 +40,43 @@ public class J2WsdlRegrTest
 	public void filesHaveSameName ()
 		throws java.lang.InterruptedException, java.io.IOException
 	{
-		final String Class = "NoMethod";
+		final String Class = "SameFileName";
 		final String FileName = String.format("%s.xml", Class);
 		RegressionHelpers.convert2WsdlWithLib(Class, "old", FileName);
 		RegressionHelpers.convert2WsdlWithLib(Class, "new", FileName);
-		File oldWsdlDir = RegressionHelpers.getWsdlDir(Class, "old");
-		File newWsdlDir = RegressionHelpers.getWsdlDir(Class, "new");
-		String newFileName = oldWsdlDir.list()[0];
-		String oldFileName = newWsdlDir.list()[0];
+		String oldFileName = RegressionHelpers.getWsdlDir(Class, "old").list()[0];
+		String newFileName = RegressionHelpers.getWsdlDir(Class, "new").list()[0];
 
-		Assert.assertEquals("Generated files have different names.",
+		Assert.assertEquals("Generated files have same name.",
 			oldFileName, newFileName);
 	}
 
 	@Test
 	public void xmlEqualNoMethod ()
-		throws java.io.IOException, org.xml.sax.SAXException
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
 	{
-		File xmlFile;
-		String oldXML;
-		String newXML;
+		final String ClassName = "NoMethod";
+		final String FileName = String.format("%s.xml", ClassName);
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
-		xmlFile = RegressionHelpers.getWsdlDir("NoMethod", "old").listFiles()[0];
-		oldXML = RegressionHelpers.loadXmlString(xmlFile);
-		xmlFile = RegressionHelpers.getWsdlDir("NoMethod", "new").listFiles()[0];
-		newXML = RegressionHelpers.loadXmlString(xmlFile);
-
-		Diff diff = new Diff(oldXML, newXML);
-		diff.overrideDifferenceListener(
-			new myDifferenceListener());
-		XMLAssert.assertTrue("The NoMethod XML files have unignored differences", diff.similar());
-		// XMLAssert.assertXMLEqual("NoMethod", oldXML, newXML);
+		RegressionHelpers.assertXMLSimilar("NoMethod is similar", oldXML, newXML);
 	}
 
 	@Test
 	public void xmlEqualManyMethods ()
 		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
 	{
-		File xmlFile;
-		String oldXML;
-		String newXML;
-		final String Class = "ManyMethods";
-		final String FileName = String.format("%s.xml", Class);
-		RegressionHelpers.convert2WsdlWithLib(Class, "old", FileName);
-		RegressionHelpers.convert2WsdlWithLib(Class, "new", FileName);
-		xmlFile = RegressionHelpers.getWsdlDir("ManyMethods", "old").listFiles()[0];
-		oldXML = RegressionHelpers.loadXmlString(xmlFile);
-		xmlFile = RegressionHelpers.getWsdlDir("ManyMethods", "new").listFiles()[0];
-		newXML = RegressionHelpers.loadXmlString(xmlFile);
+		final String ClassName = "ManyMethods";
+		final String FileName = String.format("%s.xml", ClassName);
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
-		Diff diff = new Diff(oldXML, newXML);
-		diff.overrideDifferenceListener(
-			new myDifferenceListener());
-		XMLAssert.assertTrue("ManyMethods", diff.similar());
+		RegressionHelpers.assertXMLSimilar("ManyMethods", oldXML, newXML);
 	}
 	
 
+	@Ignore
 	@Test
 	public void xmlUnitConfigurationPassed()
 		throws java.io.IOException, org.xml.sax.SAXException

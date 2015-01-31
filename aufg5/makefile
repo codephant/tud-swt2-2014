@@ -1,8 +1,9 @@
 CP		= lib/*:bin
+TESTIFACES = bin/SameFileName.class bin/NoMethod.class bin/ManyMethods.class
 
 .SILENT : test
 
-all : bin/ManyMethods.class bin/myDifferenceListener.class bin/NoMethod.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
+all : $(TESTIFACES) bin/myDifferenceListener.class bin/RegressionHelpers.class bin/J2WsdlRegrTest.class
 
 # This is meant be used like "$(make test) <TestClassName>" in a shell
 test :

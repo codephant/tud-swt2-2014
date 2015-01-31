@@ -1,8 +1,15 @@
+import static org.junit.Assert.fail;
+import static java.lang.String.format;
 import java.lang.ProcessBuilder;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.StringBuffer;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.DetailedDiff;
+import org.custommonkey.xmlunit.Difference;
+import org.custommonkey.xmlunit.XMLUnit;
+import org.custommonkey.xmlunit.NodeDetail;
 
 /**
  * Rather than an actual class, this is a namespace which holds various helper
@@ -21,6 +28,60 @@ public final class RegressionHelpers
 	 */
 	public static final String LocationBase = "http://www.example.org/de/tu-dresden/inf/swt/2/ws2014/regtest";
 
+	/**
+	 * Prepare XMLUnit for the use of asserts in this Class.
+	 */
+	public static void setupXMLUnit ()
+	{
+		XMLUnit.setIgnoreWhitespace(true); 
+		XMLUnit.setNormalizeWhitespace(true); 
+		XMLUnit.setIgnoreComments(true);
+	}
+
+	/**
+	 * Custom assertion, that checks via XMLUnit, whether two XML Strings are
+	 * equal and if not fails with a message listing all differences.
+	 */
+	public static void assertXMLSimilar (String msg, String control, String test)
+		throws java.io.IOException, org.xml.sax.SAXException
+	{
+		NodeDetail ctrlND, testND;
+		DetailedDiff diff = new DetailedDiff(new Diff(control, test));
+		StringBuilder failMsg = new StringBuilder();
+
+		if (!diff.similar())
+		{
+			failMsg.append(format("%s XML differs in:\n", msg));
+			for (Difference d : (java.util.List<Difference>)diff.getAllDifferences())
+			{
+				ctrlND = d.getControlNodeDetail();
+				testND = d.getTestNodeDetail();
+				failMsg.append(format(". Different %s (%s -> %s)\n"
+					, d.getDescription()
+					, ctrlND.getXpathLocation()
+					, testND.getXpathLocation()
+					));
+				failMsg.append(format("\texpected: %s\n", ctrlND.getValue()));
+				failMsg.append(format("\t   found: %s\n", testND.getValue()));
+			}
+			fail(failMsg.toString());
+		}
+	}
+
+	/**
+	 * Convert a given compiled Java class into WSDL and load the WSDL file's
+	 * content as a String. Although it expects needs a file name. It will not
+	 * load the file with this name, but the first file in the directory the WSDL
+	 * file is written to. This accounts for the fact, that file names might be
+	 * corrupted by the new version.
+	 */
+	public static String convertWithLibAndLoadXml (String className, String libVer, String fileName)
+		throws java.lang.InterruptedException, java.io.IOException, org.xml.sax.SAXException
+	{
+		convert2WsdlWithLib(className, libVer, fileName);
+		return loadXmlString(getWsdlDir(className, libVer).listFiles()[0]);
+	}
+	
 	/**
 	 * Fetch the contents of a file. It does not verify the content to be XML,
 	 * but rather returns it unchecked.
@@ -138,7 +199,8 @@ public final class RegressionHelpers
 	}
 
 	/**
-	 * Private constructor is private, because "sneaky-sneaky"!
+	 * Private constructor is private, because "sneaky-sneaky" -- but honestly,
+	 * this is a function pseudo-namespace and not a class.
 	 */
 	private RegressionHelpers ()
 	{}
