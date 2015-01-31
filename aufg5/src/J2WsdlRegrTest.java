@@ -19,6 +19,27 @@ public class J2WsdlRegrTest
 		RegressionHelpers.setupXMLUnit();
 	}
 
+	/**
+	 * This is a template for tests that test for XML similarity with XMLUnit.
+	 * Dollar-variables ("$...") must be replaces by the actual test data.
+
+	@Test
+	public void $testName ()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "$className";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar("$testDescription", oldXML, newXML);
+	}
+	 */
+
 	// @Test
 	// public void filesHaveNoExtName ()
 	// 	throws java.lang.InterruptedException, java.io.IOException
