@@ -109,7 +109,7 @@ public class J2WsdlRegrTest
 	}
 	
 	@Test
-	public void returnTypesTest()
+	public void xmlEqualReturnTypes()
 		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
 	{
 		// setup constants of this test
@@ -133,6 +133,70 @@ public class J2WsdlRegrTest
 		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
 		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+	
+	@Test
+	public void xmlEqualParameterNumber()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "ParameterNumber";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+	
+	@Test
+	public void xmlEqualStaticMethods()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "StaticMethods";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+	
+	@Test
+	public void xmlEqualExceptionMethods()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "ExceptionMethods";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+	
+	@Test
+	public void xmlEqualCustomClasses()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		// setup constants of this test
+		final String ClassName = "CustomClasses";
+		final String FileName = String.format("%s.xml", ClassName);
+
+		// convert and load XML strings for both library versions
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		// use the custom assert to provide complete XML diff on failure
 		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 
