@@ -1,8 +1,8 @@
 
 interface ManyMethods{
-	public void method1(int param1);
+	public int method1(int param1);
 
-	public String method2();
+	public int method2(int param1);
 
-	public int method3();
+	public int method3(int param1);
 }

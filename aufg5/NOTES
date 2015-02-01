@@ -182,18 +182,19 @@ Endlich, vergleich wir mit XMLAssert.assertTrue()
 
 ### Testbare Aspekte von Interfaces
 
-* [ ] Methodenanzahl
-	* [X] 0
-	* [ ] viele
+* [X] Methodenanzahl
+	* [X] 0 [NoMethod]
+	* [X] 1 [OneMethod] 
+ 	* [X] viele (identisch Signatur als letzte Fall) [ManyMethods]
 * [ ] Methodensignatur:
 	* [ ] Returntypen
-	* [ ] Parametertypen
+	* [X] Parametertypen
 	* [ ] Anzahl von Parametern
-	* [ ] Methodensichtbarkeit (public, protected, private)
+	* [O] Methodensichtbarkeit (public, protected, private)
 	* [ ] Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
-	* [ ] Exceptions
+	* [O] Exceptions
 	* [ ] Überschreibbarkeit (final)
-	* [ ] Annotationen (@...)
+	* [O] Annotationen (@...)
 
 * [ ] eigene Typen
 	* [ ] als Param

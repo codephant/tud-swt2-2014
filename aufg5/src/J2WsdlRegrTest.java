@@ -85,6 +85,18 @@ public class J2WsdlRegrTest
 	}
 
 	@Test
+	public void xmlEqualOneMethod ()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		final String ClassName = "OneMethod";
+		final String FileName = String.format("%s.xml", ClassName);
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+
+	@Test
 	public void xmlEqualManyMethods ()
 		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
 	{
@@ -109,6 +121,18 @@ public class J2WsdlRegrTest
 		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
 
 		// use the custom assert to provide complete XML diff on failure
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+
+	@Test
+	public void xmlEqualParameterTypes ()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		final String ClassName = "ParameterTypes";
+		final String FileName = String.format("%s.xml", ClassName);
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
 		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 
