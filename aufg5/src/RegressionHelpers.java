@@ -43,6 +43,7 @@ public final class RegressionHelpers
 	 * Custom assertion, that checks via XMLUnit, whether two XML Strings are
 	 * equal and if not fails with a message listing all differences.
 	 */
+	@SuppressWarnings("unchecked")
 	public static void assertXMLSimilar (String msg, String control, String test)
 		throws java.io.IOException, org.xml.sax.SAXException
 	{

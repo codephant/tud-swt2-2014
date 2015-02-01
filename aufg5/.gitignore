@@ -2,3 +2,5 @@
 *.diff
 # Ignore bin directory
 bin
+# Ignore the wsdl directory
+wsdl

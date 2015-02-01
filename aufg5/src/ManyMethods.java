@@ -1,4 +1,3 @@
-
 interface ManyMethods{
 	public int method1(int param1);
 
@@ -6,3 +5,4 @@ interface ManyMethods{
 
 	public int method3(int param1);
 }
+
