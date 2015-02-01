@@ -200,6 +200,18 @@ public class J2WsdlRegrTest
 		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 
+	@Test
+	public void xmlEqualIdentifierCharacters ()
+		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
+	{
+		final String ClassName = "IdentifierCharacters";
+		final String FileName = String.format("%s.xml", ClassName);
+		String oldXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "old", FileName);
+		String newXML = RegressionHelpers.convertWithLibAndLoadXml(ClassName, "new", FileName);
+
+		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
+	}
+
 	@Ignore
 	@Test
 	public void xmlUnitConfigurationPassed()

@@ -186,20 +186,20 @@ Endlich, vergleich wir mit XMLAssert.assertTrue()
 	* [X] 0 [NoMethod]
 	* [X] 1 [OneMethod] 
  	* [X] viele (identisch Signatur als letzte Fall) [ManyMethods]
-* [ ] Methodensignatur:
-	* [ ] Returntypen
-	* [X] Parametertypen
-	* [ ] Anzahl von Parametern
-	* [O] Methodensichtbarkeit (public, protected, private)
-	* [ ] Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static)
-	* [O] Exceptions
-	* [ ] Überschreibbarkeit (final)
-	* [O] Annotationen (@...)
+* [X] Methodensignatur:
+	* [X] Returntypen [ReturnTypes]
+	* [X] Parametertypen [ParameterTypes]
+	* [X] Anzahl von Parametern [ParameterNumber]
+	* [-] Methodensichtbarkeit (public, protected, private) (Nur public in INterface erlaubt)
+	* [X] Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static) [StaticMethods]
+	* [X] Exceptions [ExceptionMethods]
+	* [-] Überschreibbarkeit (final)
+	* [-] Annotationen (@...)
 
-* [ ] eigene Typen
-	* [ ] als Param
-	* [ ] als Return
+* [X] eigene Typen [CustomClasses]
+	* [X] als Param
+	* [X] als Return
 
-* [ ] Methodenparameter
-	* [ ] Bezeichner:
-		* [ ] Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+* [X] Methodenparameter [IdentifierCharacters]
+	* [X] Bezeichner:
+		* [X] Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
