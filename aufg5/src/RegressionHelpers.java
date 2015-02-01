@@ -10,6 +10,7 @@ import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.custommonkey.xmlunit.NodeDetail;
+import org.custommonkey.xmlunit.examples.RecursiveElementNameAndTextQualifier;
 
 /**
  * Rather than an actual class, this is a namespace which holds various helper
@@ -48,6 +49,9 @@ public final class RegressionHelpers
 		NodeDetail ctrlND, testND;
 		DetailedDiff diff = new DetailedDiff(new Diff(control, test));
 		StringBuilder failMsg = new StringBuilder();
+
+		// To ignore order in which identical elements appear in XML document
+		diff.overrideElementQualifier(new RecursiveElementNameAndTextQualifier());
 
 		if (!diff.similar())
 		{

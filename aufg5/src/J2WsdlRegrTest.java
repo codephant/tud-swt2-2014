@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.examples.RecursiveElementNameAndTextQualifier;
 
 import java.io.File;
 
@@ -236,21 +237,24 @@ public class J2WsdlRegrTest
 		String test = "<?xml version='1.0' encoding='UTF-8'?> \n" +
 									"		<books> \n" +
 									"		    <book> \n" +
+									"		        <name>You can win</name> \n" +
+									"		        <isbn>9971-5-0222-0</isbn> \n" +
+									"		        <author>Shiv Khera</author> \n" +
+									"		    </book> \n" +
+									"		    <book> \n" +
 									"		        <name>Angels &amp; Demons</name> \n" +
 									"		        <isbn>9971-5-0210-0</isbn> \n" +
 									"		        <author transport='http11'>Dan Brown</author> \n" +
 									"		        <category></category> \n" +
 									"		    </book> \n" +
 									"<!-- comment 2               -->" +
-									"		    <book> \n" +
-									"		        <name>You can win</name> \n" +
-									"		        <isbn>9971-5-0222-0</isbn> \n" +
-									"		        <author>Shiv Khera</author> \n" +
-									"		    </book> \n" +
+
 									"		</books>";
+		//RegressionHelpers.assertXMLSimilar("XML UNit Configuration", control, test);
 		Diff diff = new Diff(control, test);
 		diff.overrideDifferenceListener(
 			new myDifferenceListener());
+		diff.overrideElementQualifier(new RecursiveElementNameAndTextQualifier());
 		XMLAssert.assertTrue("Files are not the same", diff.similar());
 		//assertXMLEqual("Files are not the same", control, test);
 	}
