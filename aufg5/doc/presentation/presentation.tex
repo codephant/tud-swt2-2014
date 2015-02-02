@@ -6,8 +6,7 @@
 
 \setuppapersize[S6][S6]
 
-
-\setupheadertexts[{\inframed[offset=overlay, frame=off, bottomframe=on]{
+\setupheadertexts[{\inframed[frame=off, bottomframe=on]{
 Software-Technologie 2, WS 2014/2015
 --- Regressionstest für Java2WSDL
 }}]
@@ -24,7 +23,7 @@ Software-Technologie 2, WS 2014/2015
 %%% Marco definitions %%%
 
 \def\taskmark#1%
-{\framed[strut=yes,offset=overlay]{#1}}
+{\inframed{#1}}
 
 \def\taskopen{\taskmark ·}
 \def\taskdone{\taskmark x}
