@@ -20,10 +20,11 @@ all : $(CLASSES) $(TESTIFACES) bin/myDifferenceListener.class bin/RegressionHelp
 test :
 	echo 'java -cp $(CP) org.junit.runner.JUnitCore' 
 
-%.class : bin/%.class 
-
 bin/%.class : src/%.java
 	javac -classpath "$(CP)" -d bin "$<"
+
+%.pdf : %.tex
+	texexec --purge --result="$*" "$<"
 
 purge :
 	rm -fr bin/*.class wsdl/*

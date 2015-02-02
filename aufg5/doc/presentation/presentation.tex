@@ -1,0 +1,101 @@
+%%%
+% Compile this with ConTeXt/texexec; it is no LaTeX! 
+\enableregime[utf8]
+
+%%% Configuration %%%
+
+\setuppapersize[S6][S6]
+
+\setupheadertexts[{\inframed[frame=off, bottomframe=on]{
+Software-Technologie 2, WS 2014/2015
+--- Regressionstest für Java2WSDL
+}}]
+
+\setupfootertexts[{\inframed[frame=off, topframe=on]{
+\currentdate[year,--,mm,--,dd]
+--- Felix Kluge, Marcel, Javier Sagastuy, Alejandro Escalante, Andre Arnold
+--- \pagenumber/\totalnumberofpages
+}}]
+
+\setupitemize[1,packed]
+
+
+%%% Marco definitions %%%
+
+\def\taskmark#1%
+{\inframed{#1}}
+
+\def\taskopen{\taskmark ·}
+\def\taskdone{\taskmark x}
+\def\taskskip{\taskmark --}
+ 
+
+\starttext
+
+\section{Ablauf}
+\startitemize[n]
+\item Explorative Vortests: Wie funktioniert die Bibliothek
+\item Planung von Tests
+\item Implementation des nötigen Testrahmens und nicht XML-bezogener Tests
+\item Implementation der Daten und Tests für XML-bezogenen Tests
+\stopitemize
+
+\section{Vorgehensmethoden}
+\startitemize
+\item Programmierung nach Testdesign, nicht nach Diffs
+\stopitemize
+
+\section{Hindernisse}
+\startitemize
+\item Keiner vertraut mit Java-Werkzeugen, Probleme bei Konfiguration
+\item Fehlende Anforderungsspezifikationen zur Bibliothek
+\item Fehlende Komponententests: Testbare Aspekte mussten selbst erschlossen werden
+\item Programmatisch unbehebbarer Fehler beim Manipulieren der Dateinamen
+\stopitemize
+
+\page[yes]
+\section{Testbare Aspekte der Interfaces}
+\start\tfx
+\startitemize
+\item (x) Methodenanzahl
+	\startitemize
+	\item (x) 0 [NoMethod]
+	\item (x) 1 [OneMethod] 
+ 	\item (x) viele (identisch Signatur als letzte Fall) [ManyMethods]
+ 	\stopitemize
+ 	
+\item (x) Methodensignatur:
+	\startitemize
+	\item (x) Returntypen [ReturnTypes]
+	\item (x) Parametertypen [ParameterTypes]
+	\item (x) Anzahl von Parametern [ParameterNumber]
+	\item (--) Methodensichtbarkeit (public, protected, private) (Nur public in Interface erlaubt)
+	\item (x) Methodengültigkeitsbereich (Instanz oder Klasse; static oder non-static) [StaticMethods]
+	\item (x) Exceptions [ExceptionMethods]
+	\item (--) Überschreibbarkeit (final)
+	\item (--) Annotationen (@...)
+	\stopitemize
+
+\item (x) eigene Typen [CustomClasses]
+	\startitemize
+	\item (x) als Param
+	\item (x) als Return
+	\stopitemize
+
+\item (x) Methodenparameter [IdentifierCharacters]
+	\startitemize
+	\item (x) Bezeichner:
+		\startitemize
+		\item (x) Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+		\stopitemize
+	\stopitemize
+\stopitemize
+\stop%\tfx -- smaller font
+
+\section{Fazit}
+\startitemize
+\item Entwicklung mit JUnit und XMLUnit lief gut
+\item hat Spaß gemacht und war lehrreich
+\stopitemize
+
+\stoptext

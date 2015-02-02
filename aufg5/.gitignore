@@ -4,3 +4,8 @@
 bin
 # Ignore the wsdl directory
 wsdl
+# Ignore intermediate TeX files
+*.tu[io]
+*.mp
+*.tmp
+*.log
