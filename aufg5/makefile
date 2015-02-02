@@ -8,10 +8,11 @@ all : bin/ManyMethods.class bin/myDifferenceListener.class bin/NoMethod.class bi
 test :
 	echo 'java -cp $(CP) org.junit.runner.JUnitCore' 
 
-%.class : bin/%.class 
-
 bin/%.class : src/%.java
 	javac -classpath "$(CP)" -d bin "$<"
+
+%.pdf : %.tex
+	texexec --purge --result="$*" "$<"
 
 purge :
 	rm -fr bin/*.class wsdl/*

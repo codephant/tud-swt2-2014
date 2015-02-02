@@ -2,3 +2,8 @@
 *.diff
 # Ignore bin directory
 bin
+# Ignore intermediate TeX files
+*.tu[io]
+*.mp
+*.tmp
+*.log
