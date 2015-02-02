@@ -153,6 +153,7 @@ public class J2WsdlRegrTest
 		RegressionHelpers.assertXMLSimilar(ClassName, oldXML, newXML);
 	}
 	
+	@Ignore
 	@Test
 	public void xmlEqualStaticMethods()
 		throws java.io.IOException, org.xml.sax.SAXException, java.lang.InterruptedException
