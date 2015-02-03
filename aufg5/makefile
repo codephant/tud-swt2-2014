@@ -23,6 +23,8 @@ test :
 bin/%.class : src/%.java
 	javac -classpath "$(CP)" -d bin "$<"
 
+presentation : doc/presentation/presentation.pdf
+
 %.pdf : %.tex
 	texexec --purge --result="$*" "$<"
 

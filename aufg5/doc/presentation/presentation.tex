@@ -2,35 +2,63 @@
 % Compile this with ConTeXt/texexec; it is no LaTeX! 
 \enableregime[utf8]
 
-%%% Configuration %%%
+%%% D E F %%%
 
-\setuppapersize[S6][S6]
+\definepapersize[scrsamsung][width=222mm, height=125mm]
+\definecolor[TUBlue][r=.0429688, g=.164062, b=.316406]
+\definecolor[TULightBlue][r=.386719, g=.421875, b=.554688]
+\newdimen\BgThickBarHeight
+\newdimen\BgThinBarHeight
+\BgThinBarHeight=5pt
 
-\setupheadertexts[{\inframed[frame=off, bottomframe=on]{
-Software-Technologie 2, WS 2014/2015
---- Regressionstest für Java2WSDL
-}}]
 
-\setupfootertexts[{\inframed[frame=off, topframe=on]{
-\currentdate[year,--,mm,--,dd]
---- Felix Kluge, Marcel, Javier Sagastuy, Alejandro Escalante, Andre Arnold
---- \pagenumber/\totalnumberofpages
-}}]
+%%% C O N F I G %%%
+
+\setuppapersize[scrsamsung][scrsamsung]
+\setuplayout
+	[ height=\dimexpr(.95\paperheight)
+	, width=\dimexpr(.95\paperwidth)
+	, backspace=.025\paperwidth
+	, topspace=.025\paperheight
+	, header=1.2em
+	, headerdistance=2em
+	, footer=1.2em
+	, footerdistance=2em
+	, margin=0pt
+	]
+
+\setupcolors[state=start]
+
+\BgThickBarHeight=\dimexpr(\topspace+\headerheight+.25\headerdistance)
+\defineoverlay[slideBG]
+[\vbox{
+\blackrule[width=\paperwidth, height=\BgThickBarHeight, color=TUBlue]
+\packed
+\blackrule[width=\paperwidth, height=\BgThinBarHeight, color=TULightBlue]
+\vskip \dimexpr(\paperheight-\BgThickBarHeight-\BgThinBarHeight)
+}]
+
+%\setlayer[slideBGlayer][x=0pt, y=\dimexpr(\paperheight-\BgThickBarHeight)]
+%{\blackrule[width=\paperwidth, height=\BgThickBarHeight, color=TUBlue]}
+
+\setupbackgrounds[paper][background=slideBG]
+
+\setupheader[color=white, style=\ss\bf]
+\setupheadertexts[]
+\setupheadertexts[Regressionstest für Java2WSDL][Software-Technologie 2, WS 2014/2015]
+
+\setupfooter[color=TULightBlue, style=\ss]
+\setupfootertexts[Felix Kluge, Marcel, Javier Sagastuy, Alejandro Escalante, André Arnold]
+\setupfootertexts[{\currentdate[year,--,mm,--,dd]}][\pagenumber/\totalnumberofpages]
 
 \setupitemize[1,packed]
 
 
-%%% Marco definitions %%%
-
-\def\taskmark#1%
-{\inframed{#1}}
-
-\def\taskopen{\taskmark ·}
-\def\taskdone{\taskmark x}
-\def\taskskip{\taskmark --}
- 
+%%% T E X T %%%
 
 \starttext
+\ss\TUBlue
+%\showframe
 
 \section{Ablauf}
 \startitemize[n]
@@ -55,7 +83,7 @@ Software-Technologie 2, WS 2014/2015
 
 \page[yes]
 \section{Testbare Aspekte der Interfaces}
-\start\tfx
+\startcolumns[2] \tfx
 \startitemize
 \item (x) Methodenanzahl
 	\startitemize
@@ -86,11 +114,11 @@ Software-Technologie 2, WS 2014/2015
 	\startitemize
 	\item (x) Bezeichner:
 		\startitemize
-		\item (x) Möglichen Schriftzeichen: https://stackoverflow.com/questions/11774099
+		\item (x) Möglichen Schriftzeichen
 		\stopitemize
 	\stopitemize
 \stopitemize
-\stop%\tfx -- smaller font
+\stopcolumns
 
 \section{Fazit}
 \startitemize
