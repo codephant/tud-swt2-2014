@@ -30,16 +30,15 @@
 \setupcolors[state=start]
 
 \BgThickBarHeight=\dimexpr(\topspace+\headerheight+.25\headerdistance)
-\defineoverlay[slideBG]
-[\vbox{
-\blackrule[width=\paperwidth, height=\BgThickBarHeight, color=TUBlue]
-\packed
-\blackrule[width=\paperwidth, height=\BgThinBarHeight, color=TULightBlue]
-\vskip \dimexpr(\paperheight-\BgThickBarHeight-\BgThinBarHeight)
-}]
+\definelayer[slideBGlayer]
 
+\defineoverlay[slideBG][{\setlayer[slideBGlayer][x=0sp, y=0sp]
+{\blackrule[width=\paperwidth, height=\BgThickBarHeight, color=TUBlue]}
+\setlayer[slideBGlayer][x=0sp, y=\BgThickBarHeight]
+{\blackrule[width=\paperwidth, height=\BgThinBarHeight, color=TULightBlue]}
 %\setlayer[slideBGlayer][x=0pt, y=\dimexpr(\paperheight-\BgThickBarHeight)]
 %{\blackrule[width=\paperwidth, height=\BgThickBarHeight, color=TUBlue]}
+\flushlayer[slideBGlayer]}]
 
 \setupbackgrounds[paper][background=slideBG]
 
